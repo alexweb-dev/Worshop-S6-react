@@ -6,6 +6,13 @@ import CardList from './components/CardList';
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [basket, setBasket] = useState([]);
+
+  const addToBasket = (article) => {
+    const newBasket = basket.slice();
+    newBasket.push(article);
+    setBasket(newBasket);
+  }
+    
   const categories = [
     'Toutes les catégories',
     'Électronique',
@@ -23,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar basket={basket}/>
       <div>
         {categories.map((category, index) => (
           <button key={index} onClick={() => setSelectedCategory(category)}>
@@ -31,10 +38,10 @@ function App() {
           </button>
         ))}
       </div>
-      <CardList selectedCategory={selectedCategory} />
+      <CardList selectedCategory={selectedCategory} addToBasket={addToBasket} />
       <Footer />
     </div>
   );
 }
 
-export default App;
+export default App

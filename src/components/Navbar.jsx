@@ -1,11 +1,12 @@
     import React from 'react';
     import './NavBar.css'
 
-    function Navbar() {
+    function Navbar({basket}) {
     return (
         <div className='navbar'>
-        <p>Logo</p>
-        <p>Nom du site</p>
+        <p>Logow</p>
+        <p>Amazob</p>
+        <p>Articles dans le panier: {basket.length}</p>
         </div>
     );
     }
