@@ -1,0 +1,14 @@
+.card-list{
+display: flex;
+flex-wrap: wrap;
+background-color:azure;
+justify-content: space-around;
+padding: 5%;
+border: 10px;
+border-color: black;
+}
+.eachCard{
+    border: 1rem;
+    /* background-color: red; */
+    border-color: white; 
+}
