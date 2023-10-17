@@ -12,7 +12,11 @@ function App() {
     newBasket.push(article);
     setBasket(newBasket);
   }
-    
+
+  let totalBasketPrice = 0;
+  for (const article of basket) {
+    totalBasketPrice += article.price;
+  }
   const categories = [
     'Toutes les catégories',
     'Électronique',
@@ -30,7 +34,7 @@ function App() {
 
   return (
     <div>
-      <Navbar basket={basket}/>
+      <Navbar basket={basket} totalBasketPrice={totalBasketPrice}/>
       <div>
         {categories.map((category, index) => (
           <button key={index} onClick={() => setSelectedCategory(category)}>
